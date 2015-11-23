@@ -1,4 +1,5 @@
 require 'net/http'
+require 'yaml'
 
 # Use this class to talk to the APIs
 class HttpBase
@@ -12,7 +13,7 @@ class HttpBase
     url = options[:url]
     data = options[:data]
 
-    uri = URL("#{@config.api_base_url}/#{url}")
+    uri = URI("#{@config['api_base_url']}/#{url}")
 
     if method.downcase == 'get'
       run_get(uri)
@@ -25,7 +26,7 @@ class HttpBase
 
   def run_get(uri)
     req = Net::HTTP::Get.new(uri)
-    req['Auth-Token'] = @config.key
+    req['Auth-Token'] = @config['key']
 
     res = Net::HTTP.start(uri.hostname, uri.port) {|http|
       http.request(req)
@@ -36,8 +37,8 @@ class HttpBase
 
   def run_post(uri, data)
     req = Net::HTTP::Post.new(uri)
-    req['Auth-Token'] = @config.key
-    req.content_type = @config.content_type
+    req['Auth-Token'] = @config['key']
+    req.content_type = @config['content_type']
     req.body = data
 
     res = Net::HTTP.start(uri.hostname, uri.port) {|http|
