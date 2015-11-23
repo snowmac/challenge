@@ -5,7 +5,7 @@ class Inventory
   end
 
   def add(item)
-    @collection.push(Ink.new(item['color'],item['cost'],item['id']))
+    @collection.push(Ink.new(item[:color],item[:cost],item[:id]))
   end
 
   def search_for_sub(ink)

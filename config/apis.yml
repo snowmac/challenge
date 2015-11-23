@@ -1,12 +1,12 @@
 key: "73c6e6fa-2197-49c3-8074-d2f549bc2b62"
 api_base_url: "http://challenge.teespring.com"
 inks:
-  url: "/inks"
+  url: "inks"
   method: "get"
 questions:
-  url: "/question/evaluate"
+  url: "question/evaluate"
   method: "get"
 answers:
-  url: "/answer/practice"
+  url: "answer/practice"
   method: "post"
 content_type: "Content-Type: application/json"

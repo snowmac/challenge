@@ -1,5 +1,6 @@
 require 'net/http'
 require 'yaml'
+require 'json'
 
 # Use this class to talk to the APIs
 class HttpBase
@@ -16,10 +17,12 @@ class HttpBase
     uri = URI("#{@config['api_base_url']}/#{url}")
 
     if method.downcase == 'get'
-      run_get(uri)
+      result = run_get(uri)
     elsif method.downcase == 'post'
-      run_post(uri,data)
+      result = run_post(uri,data)
     end
+
+    JSON.parse(result)
   end
 
   private 
