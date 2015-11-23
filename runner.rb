@@ -15,6 +15,13 @@ inks['inks'].each do |ink|
   )
 end
 
+question = QuestionService.new.fetch!
 
-# require 'pry';binding.pry;
+q = Question.new(question['scenario_id'], question['questions'])
+
+subs = []
+
+q.question_inventory.colors.each do |item|
+  subs.push(inventory.search_for_sub(item))
+end
 

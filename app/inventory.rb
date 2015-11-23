@@ -15,4 +15,12 @@ class Inventory
     end
   end
 
+  def colors
+    color_collection = []
+    @collection.each do |item|
+      color_collection.push(item.ink)
+    end
+    color_collection
+  end
+
 end
