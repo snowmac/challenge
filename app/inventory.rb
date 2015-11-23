@@ -9,7 +9,10 @@ class Inventory
   end
 
   def search_for_sub(ink)
-    raise 'need to implement this feature'
+    @collection.each do |item|
+      c = Calculator.new(ink.color, item.color)
+      return item if c.is_acceptable?
+    end
   end
 
 end

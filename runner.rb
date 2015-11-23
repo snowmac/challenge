@@ -16,5 +16,5 @@ inks['inks'].each do |ink|
 end
 
 
-require 'pry';binding.pry;
+# require 'pry';binding.pry;
 
