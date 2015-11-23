@@ -1,0 +1,13 @@
+key: "73c6e6fa-2197-49c3-8074-d2f549bc2b62"
+api_base: "http://challenge.teespring.com"
+inks:
+  url: "/inks"
+  method: "get"
+questions:
+  url: "/question/evaluate"
+  method: "get"
+answers:
+  url: "/answer/practice"
+  method: "post"
+full_token: "Auth-Token: 73c6e6fa-2197-49c3-8074-d2f549bc2b62"
+content_type: "Content-Type: application/json"
