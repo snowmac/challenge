@@ -93,4 +93,9 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+  # Require all dependecies
+  Dir[File.join(File.dirname(__FILE__), "..", "app" , "**.rb")].each do |f|
+    require f
+  end
+
 end
